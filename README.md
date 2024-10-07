@@ -10,7 +10,7 @@ This is a Node.js library designed to interact with our internal protocol for is
 To install the library in your Node.js project, run:
 
 ```bash
-npm install credential-management-lib
+npm install wallid-certishop-sdk
 ```
 
 ## Usage

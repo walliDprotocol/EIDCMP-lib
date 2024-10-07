@@ -1,5 +1,5 @@
 {
-  "name": "@wallid/certishop",
+  "name": "wallid-certishop-sdk",
   "version": "1.0.0",
   "description": "EIDCMP library to issue and verify credentials",
   "main": "lib/index.js",
