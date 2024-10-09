@@ -1,5 +1,5 @@
 {
-  "name": "@wallid/certishop",
+  "name": "wallid-certishop",
   "version": "1.1.1",
   "description": "EIDCMP library to issue and verify credentials",
   "main": "lib/index.js",
@@ -7,7 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "axios": "^1.2.0"
+    "axios": "^1.2.0",
+    "pubnub": "^8.2.8",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "jest": "^29.7.0",
