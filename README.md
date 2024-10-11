@@ -1,9 +1,7 @@
 
-Credential Management Library
+# CertiShop Lib
 
-# Credential Management Library
-
-This is a Node.js library designed to interact with our internal protocol for issuing and verifying credentials. It authenticates using an `apiKeyToken` and manages JWT tokens for authenticated requests. The library automatically retries authentication if the token expires.
+This is a Node.js library designed to interact with WalliD Certishop protocol for issuing and verifying digital certificates. It authenticates using an `apiKeyToken` and manages JWT tokens for authenticated requests. The library automatically retries authentication if the token expires.
 
 ## Installation
 
@@ -29,7 +27,7 @@ Set your `apiKeyToken` for authentication:
 configure('your_api_key_token');
 ```
 
-### 3. Create credentials
+### 3. Create certificates
 
 ```javascript
 const payload = { username: 'test_user', password: 'test_password' };
@@ -39,7 +37,7 @@ createCredentials(payload)
   .catch(error => console.error('Error creating credentials:', error));
 ```
 
-### 4. Verify credentials
+### 4. Verify certificates
 
 ```javascript
 const payload = { credentialId: '12345' };
