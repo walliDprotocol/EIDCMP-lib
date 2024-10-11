@@ -26,14 +26,19 @@ const { configure, createCredentials, verifyCredentials } = require('credential-
 Set your `apiKeyToken` for authentication:
 
 ```javascript
-configure('your_api_key_token');
+init('your_api_key_token');
 ```
 
 ### 3. Create credentials
 
 ```javascript
-const payload = { username: 'test_user', password: 'test_password' };
-
+const payload = {
+  cid: 'cid_value', // Certificate Authority (CA) id
+  tid: 'tid_value', // Template id 
+  waAdmin: 'waAdmin_value', // wallet address of the admin creating the credential
+  data: [{ key: 'value' }], // data to be stored in the credential (in the format of a list of key value pairs)
+  email: 'user@domain.com', // email where the credential will be sent
+};
 createCredentials(payload)
   .then(response => console.log('Credentials Created:', response))
   .catch(error => console.error('Error creating credentials:', error));
@@ -42,7 +47,11 @@ createCredentials(payload)
 ### 4. Verify credentials
 
 ```javascript
-const payload = { credentialId: '12345' };
+const payload = {
+  tid: 'tid_value', // required to verify the any credential matching this tid
+  id: 'id_value', // if sent will try to verify the credential with this id, if not sent will match any credential with this tid
+  guid: 'guid_value', // this is a unique identifier for the verification session and is returned in the init method
+};
 
 verifyCredentials(payload)
   .then(response => console.log('Credentials Valid:', response))
