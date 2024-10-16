@@ -8,7 +8,7 @@ This is a Node.js library designed to interact with WalliD Certishop protocol fo
 To install the library in your Node.js project, run:
 
 ```bash
-npm install wallid-certishop-sdk
+npm install wallid-certishop
 ```
 
 ## Usage
