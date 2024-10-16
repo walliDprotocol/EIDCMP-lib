@@ -27,7 +27,45 @@ Set your `apiKeyToken` for authentication:
 init('your_api_key_token');
 ```
 
-### 3. Create certificates
+### Create Credential Authority (CA)
+
+```javascript
+const payload = {
+    wa : "wallet_address", // wallet address of the CA
+    admin_email : "admin_email" // admin email of the CA
+}
+
+createCA(payload)
+  .then(response => console.log('CA Created:', response))
+  .catch(error => console.error('Error creating CA:', error));
+```
+
+### Create Template
+
+```javascript
+const payload = {
+  cid: 'cid_value', // Certificate Authority (CA) id
+  name: 'template_name',
+  waAdmin: 'waAdmin_value', // wallet address of the admin creating the template
+  frontendProps: {
+    components: [
+      {
+        id: 'component_id'
+        ...
+        type: 'text',
+      }
+    ],
+    currentLayout: 'current_layout'
+  }
+}
+
+createTemplate(payload)
+  .then(response => console.log('Template Created:', response))
+  .catch(error => console.error('Error creating template:', error));
+```
+
+
+###  Create certificates
 
 ```javascript
 const payload = {
@@ -42,7 +80,7 @@ createCredentials(payload)
   .catch(error => console.error('Error creating credentials:', error));
 ```
 
-### 4. Verify certificates
+### Verify certificates
 
 ```javascript
 const payload = {
@@ -52,7 +90,7 @@ const payload = {
 };
 
 verifyCredentials(payload)
-  .then(response => console.log('Credentials Valid:', response))
+  .then(response => console.log('Verification URL:', response))
   .catch(error => console.error('Error verifying credentials:', error));
 ```
 
